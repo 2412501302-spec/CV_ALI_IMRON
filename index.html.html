@@ -1,0 +1,741 @@
+```html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+
+    <!--
+    ============================================================
+    CURRICULUM VITAE - ALI IMRON ISMAUNA
+
+    File      : cv_ali_imron.html
+    NIM       : 2412501302
+    Program   : Sistem Informasi
+    Kampus    : Universitas Budi Luhur
+
+    ============================================================
+    -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CV - Ali Imron Ismauna</title>
+
+    <style>
+
+        /* =====================================================
+           PENGATURAN DASAR HALAMAN
+           ===================================================== */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #eef2f5;
+            color: #333;
+        }
+
+        /* =====================================================
+           CONTAINER UTAMA CV
+           ===================================================== */
+
+        .container {
+            width: 85%;
+            max-width: 1000px;
+            margin: 30px auto;
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+
+            /* Modifikasi tampilan */
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        /* =====================================================
+           HEADER
+           ===================================================== */
+
+        header {
+            background: linear-gradient(135deg, #173f5f, #20639b);
+            color: white;
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        /* =====================================================
+           FOTO DIRI
+           ===================================================== */
+
+        .profile-photo {
+            width: 160px;
+            height: 160px;
+            object-fit: cover;
+
+            /* Membuat foto berbentuk lingkaran */
+            border-radius: 50%;
+
+            /* Border foto */
+            border: 5px solid white;
+
+            /* Bayangan foto */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+        }
+
+        /* Heading level 1 */
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+
+        /* Heading level 2 */
+        header h2 {
+            margin: 10px 0;
+            font-size: 21px;
+            font-weight: normal;
+            border: none;
+            color: white;
+        }
+
+        header p {
+            margin: 5px 0;
+            font-size: 16px;
+        }
+
+        /* =====================================================
+           ISI CV
+           ===================================================== */
+
+        .content {
+            padding: 35px 45px;
+        }
+
+        /* Heading level 2 */
+        .content > h2 {
+            color: #173f5f;
+            border-bottom: 3px solid #20639b;
+            padding-bottom: 8px;
+            margin-top: 35px;
+            margin-bottom: 15px;
+        }
+
+        /* Heading level 3 */
+        h3 {
+            color: #20639b;
+            margin-bottom: 8px;
+        }
+
+        p {
+            line-height: 1.7;
+        }
+
+        /* =====================================================
+           DATA DIRI
+           UNORDERED LIST
+           ===================================================== */
+
+        ul {
+            line-height: 2;
+            padding-left: 25px;
+        }
+
+        /* =====================================================
+           ORDERED LIST
+           ===================================================== */
+
+        ol {
+            line-height: 2;
+            padding-left: 25px;
+        }
+
+        /* =====================================================
+           TABLE RIWAYAT PENDIDIKAN
+
+           MODIFIKASI TABLE:
+           1. Border
+           2. Padding
+           3. Background color
+           4. Text alignment
+           5. Border radius
+           6. Hover effect
+           ===================================================== */
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            border: 2px solid #173f5f;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th {
+            background-color: #173f5f;
+            color: white;
+            padding: 14px;
+            text-align: center;
+            border: 1px solid white;
+        }
+
+        td {
+            padding: 13px;
+            border: 1px solid #bfc7ce;
+            text-align: center;
+        }
+
+        /* Warna berbeda pada baris genap */
+        tr:nth-child(even) {
+            background-color: #f0f5f9;
+        }
+
+        /* Efek ketika mouse diarahkan ke baris */
+        tr:hover {
+            background-color: #d9eaf5;
+        }
+
+        /* =====================================================
+           BAGIAN PENGALAMAN
+           ===================================================== */
+
+        .experience {
+            background-color: #f7f9fb;
+            padding: 18px 22px;
+            margin: 15px 0;
+            border-left: 5px solid #20639b;
+            border-radius: 8px;
+        }
+
+        .experience h3 {
+            margin-top: 0;
+        }
+
+        /* =====================================================
+           BAGIAN KEAHLIAN
+           ===================================================== */
+
+        .skill-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill {
+            background-color: #173f5f;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+
+        /* =====================================================
+           MEDIA SOSIAL
+
+           target="_blank" pada HTML akan membuat setiap
+           hyperlink dibuka pada tab/window browser baru.
+           ===================================================== */
+
+        .social-media {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .social-media a {
+            display: inline-block;
+            text-decoration: none;
+            background-color: #173f5f;
+            color: white;
+            padding: 12px 22px;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        /* Efek saat mouse diarahkan ke link */
+        .social-media a:hover {
+            background-color: #20639b;
+            transform: translateY(-2px);
+        }
+
+        /* =====================================================
+           TUJUAN KARIER
+           ===================================================== */
+
+        .career {
+            background-color: #eef6fb;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid #173f5f;
+        }
+
+        /* =====================================================
+           FOOTER
+           ===================================================== */
+
+        footer {
+            background-color: #173f5f;
+            color: white;
+            text-align: center;
+            padding: 18px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* =====================================================
+           RESPONSIVE
+
+           Agar CV tetap bagus ketika dibuka melalui HP.
+           ===================================================== */
+
+        @media (max-width: 700px) {
+
+            .container {
+                width: 95%;
+                margin: 15px auto;
+            }
+
+            header {
+                flex-direction: column;
+                text-align: center;
+                padding: 30px 20px;
+            }
+
+            header h1 {
+                font-size: 28px;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            .profile-photo {
+                width: 140px;
+                height: 140px;
+            }
+
+            table {
+                font-size: 12px;
+            }
+
+            th,
+            td {
+                padding: 8px;
+            }
+
+            .social-media {
+                flex-direction: column;
+            }
+
+            .social-media a {
+                text-align: center;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- ========================================================
+         CONTAINER UTAMA
+         ======================================================== -->
+
+    <div class="container">
+
+        <!-- ====================================================
+             HEADER CV
+             ==================================================== -->
+
+        <header>
+
+            <!--
+            FOTO DIRI
+
+            Pastikan file foto bernama:
+            foto-saya.jpg
+
+            dan berada dalam folder yang sama dengan file HTML.
+            -->
+
+            <img
+                src="foto-saya.jpg"
+                alt="Foto Ali Imron Ismauna"
+                class="profile-photo"
+            >
+
+            <div>
+
+                <!-- Heading Level 1 -->
+                <h1>Ali Imron Ismauna</h1>
+
+                <!-- Heading Level 2 -->
+                <h2>Mahasiswa Sistem Informasi</h2>
+
+                <p>Universitas Budi Luhur</p>
+
+            </div>
+
+        </header>
+
+
+        <!-- ====================================================
+             ISI CV
+             ==================================================== -->
+
+        <div class="content">
+
+
+            <!-- =================================================
+                 PROFIL
+                 ================================================= -->
+
+            <!-- Heading Level 2 -->
+            <h2>Profil</h2>
+
+            <p>
+                Saya adalah mahasiswa Sistem Informasi Universitas Budi Luhur
+                yang memiliki ketertarikan pada bidang teknologi informasi,
+                pengembangan aplikasi, dan pengelolaan database. Saya memiliki
+                semangat untuk mempelajari teknologi baru, mampu bekerja secara
+                individu maupun dalam tim, serta memiliki pengalaman dalam
+                mengerjakan project aplikasi dan praktik kerja lapangan.
+            </p>
+
+
+            <!-- =================================================
+                 DATA DIRI
+                 ================================================= -->
+
+            <h2>Data Diri</h2>
+
+            <!--
+            UNORDERED LIST
+            Digunakan untuk memenuhi salah satu persyaratan tugas.
+            -->
+
+            <ul>
+
+                <li>
+                    <strong>Nama:</strong>
+                    Ali Imron Ismauna
+                </li>
+
+                <li>
+                    <strong>Tempat, Tanggal Lahir:</strong>
+                    Branti Raya, Lampung Selatan, 02 September 2005
+                </li>
+
+                <li>
+                    <strong>Alamat:</strong>
+                    Perumahan Medang Lestari A3 F24,
+                    Kabupaten Tangerang
+                </li>
+
+                <li>
+                    <strong>No. HP:</strong>
+                    0895605899253
+                </li>
+
+                <li>
+                    <strong>NIM:</strong>
+                    2412501302
+                </li>
+
+                <li>
+                    <strong>Email:</strong>
+                    2412501302@student.budiluhur.ac.id
+                </li>
+
+            </ul>
+
+
+            <!-- =================================================
+                 PENDIDIKAN
+                 ================================================= -->
+
+            <h2>Riwayat Pendidikan</h2>
+
+            <!--
+            TABLE
+            Memiliki beberapa modifikasi:
+            - Border
+            - Padding
+            - Background color
+            - Text alignment
+            - Hover effect
+            - Warna baris berbeda
+            -->
+
+            <table>
+
+                <tr>
+
+                    <th>No.</th>
+                    <th>Institusi</th>
+                    <th>Program/Jurusan</th>
+                    <th>Tahun</th>
+
+                </tr>
+
+                <tr>
+
+                    <td>1</td>
+
+                    <td>
+                        Universitas Budi Luhur
+                    </td>
+
+                    <td>
+                        FTI - Sistem Informasi
+                    </td>
+
+                    <td>
+                        2024 - Sekarang
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>2</td>
+
+                    <td>
+                        SMK 2 Mei Bandar Lampung
+                    </td>
+
+                    <td>
+                        -
+                    </td>
+
+                    <td>
+                        Lulus
+                    </td>
+
+                </tr>
+
+            </table>
+
+
+            <!-- =================================================
+                 KEAHLIAN
+                 ================================================= -->
+
+            <h2>Keahlian</h2>
+
+            <!--
+            UNORDERED LIST / KETERAMPILAN
+            -->
+
+            <div class="skill-container">
+
+                <div class="skill">
+                    Android Studio
+                </div>
+
+                <div class="skill">
+                    MySQL
+                </div>
+
+                <div class="skill">
+                    Database
+                </div>
+
+                <div class="skill">
+                    Pengembangan Aplikasi
+                </div>
+
+                <div class="skill">
+                    Problem Solving
+                </div>
+
+                <div class="skill">
+                    Microsoft Office
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 PENGALAMAN
+                 ================================================= -->
+
+            <h2>Pengalaman</h2>
+
+
+            <!-- Pengalaman pertama -->
+            <div class="experience">
+
+                <!-- Heading Level 3 -->
+                <h3>
+                    Project Kuliah - Aplikasi Rumah Sakit
+                </h3>
+
+                <p>
+                    Mengembangkan project aplikasi rumah sakit sebagai bagian
+                    dari kegiatan perkuliahan. Project menggunakan Android
+                    Studio untuk pengembangan aplikasi serta MySQL untuk
+                    pengelolaan database.
+                </p>
+
+            </div>
+
+
+            <!-- Pengalaman kedua -->
+            <div class="experience">
+
+                <h3>
+                    Praktik Kerja Lapangan (PKL)
+                </h3>
+
+                <p>
+                    <strong>
+                        Bandara Radin Inten II, Lampung Selatan
+                    </strong>
+                </p>
+
+                <p>
+                    Melaksanakan Praktik Kerja Lapangan pada bagian
+                    <strong>ELBAN (Elektronik Bandara)</strong>.
+                    Mendapatkan pengalaman dalam mengenal perangkat elektronik
+                    dan sistem pendukung operasional di lingkungan bandara.
+                </p>
+
+            </div>
+
+
+            <!-- =================================================
+                 KOMPETENSI / TUJUAN PENGEMBANGAN
+                 ================================================= -->
+
+            <h2>Kompetensi yang Ingin Dikembangkan</h2>
+
+            <!--
+            ORDERED LIST
+            Digunakan untuk memenuhi persyaratan tugas.
+            -->
+
+            <ol>
+
+                <li>
+                    Meningkatkan kemampuan pengembangan aplikasi.
+                </li>
+
+                <li>
+                    Memperdalam kemampuan database dan MySQL.
+                </li>
+
+                <li>
+                    Mempelajari teknologi informasi terbaru.
+                </li>
+
+                <li>
+                    Meningkatkan kemampuan bekerja dalam tim.
+                </li>
+
+                <li>
+                    Mendapatkan pengalaman profesional di dunia kerja.
+                </li>
+
+            </ol>
+
+
+            <!-- =================================================
+                 MEDIA SOSIAL
+                 ================================================= -->
+
+            <h2>Media Sosial</h2>
+
+            <p>
+                Silakan kunjungi media sosial saya melalui link berikut:
+            </p>
+
+            <div class="social-media">
+
+                <!--
+                INSTAGRAM
+                target="_blank" = membuka link pada tab/window baru.
+                -->
+
+                <a
+                    href="https://www.instagram.com/aliimronnn1/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Instagram
+                </a>
+
+
+                <!--
+                TIKTOK
+                -->
+
+                <a
+                    href="https://www.tiktok.com/@c0ving1"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    TikTok
+                </a>
+
+
+                <!--
+                FACEBOOK
+                -->
+
+                <a
+                    href="https://www.facebook.com/share/19GDLcH38q/?mibextid=wwXIfr"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Facebook
+                </a>
+
+            </div>
+
+
+            <!-- =================================================
+                 TUJUAN KARIER
+                 ================================================= -->
+
+            <h2>Tujuan Karier</h2>
+
+            <div class="career">
+
+                <p>
+                    Saya ingin mengembangkan karier di bidang teknologi
+                    informasi dan memperoleh pengalaman profesional yang dapat
+                    meningkatkan kemampuan saya dalam pengembangan aplikasi,
+                    database, dan sistem informasi. Saya juga ingin terus
+                    belajar serta memberikan kontribusi yang baik di
+                    lingkungan kerja.
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- ====================================================
+             FOOTER
+             ==================================================== -->
+
+        <footer>
+
+            <p>
+                &copy; 2026 Ali Imron Ismauna
+            </p>
+
+        </footer>
+
+    </div>
+
+</body>
+</html>
+```
